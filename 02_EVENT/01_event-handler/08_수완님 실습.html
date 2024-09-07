@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            background-color: green;
+            color:#ffffff;
+            width: 100px;
+            height: 40px;
+            border: solid 0px;
+            border-radius: 8px 8px 8px 8px;
+        }
+        .b{
+            background-color:blue;
+            color:#ffffff;
+            width: 100px;
+            height: 40px;
+            border: solid 0px;
+            border-radius: 8px 8px 8px 8px;
+        }
+    </style>
+</head>
+<body>
+    <button class="a">Click me!</button>
+    <button class="b">Click for Alert</button>
+    <br><br>
+    <input type="radio" id="naver" name="site" value="https://www.google.com" >
+    <label for="google" >Google</label>
+    <input type="radio" id="google" name="site" value="https://www.naver.com" >
+    <label for="naver">Naver</label>
+    <input type="radio" id="school" name="site" value="https://www.YouTube.com" >
+    <label for="youtube">YouTube</label><br>
+
+    <script>
+        setTimeout(() => alert("5초가 경과했습니다!"), 5000)
+        click = document.querySelector('.a');
+        click.addEventListener("click", () =>{
+                click.style.backgroundColor ='blue';
+            });
+        click2 =document.querySelector('.b');
+        click2.addEventListener("click", () =>{
+            alert("버튼이 클릭되었습니다");
+        } );
+        const $radios = document.getElementsByName('site');
+        
+        $radios.forEach(radio => {
+            radio.addEventListener('click', () =>{
+                const url =radio.value;
+                location.href = url;
+            })
+        })
+    </script>
+
+</body>
+</html>

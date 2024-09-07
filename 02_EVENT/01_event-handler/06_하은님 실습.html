@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            width:500px;
+            height: 500px;
+            border: solid 1px #000000;
+            display: flex;
+            align-items: center; 
+        }
+        .b{
+            margin-left: 150px;
+        }
+        .c{
+            margin-left: 60px;
+        }
+        .d{
+            margin-left: 30px;
+        }
+        .f{
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <input type="radio" id="naver" name="site" value="https://www.naver.com" >
+    <label for="naver" >네이버</label><br>
+    <input type="radio" id="google" name="site" value="https://www.google.com" >
+    <label for="google">구글</label><br>
+    <input type="radio" id="school" name="site" value="https://www.melon.com" >
+    <label for="school">멜론</label><br>
+
+    <div class="a">
+        <div class="b">
+            <div class="c">Login</div><br>
+            <label>ID</label>
+            <input type="text"><br><br>
+            <label>Password</label>
+            <input type="text"><br><br>
+            <button class="d">취소</button> <button class="f">확인</button>
+            
+        </div>
+    </div>
+    <script>
+        const $radios = document.getElementsByName('site');
+        
+        $radios.forEach(radio => {
+            radio.addEventListener('click', () =>{
+                const url =radio.value;
+                location.href = url;
+            })
+        })
+        const box = document.querySelector('.f');
+        box.onclick = function() {
+            alert('로그인 성공!');
+        };
+    </script>
+</body>
+</html>
